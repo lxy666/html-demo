@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <style>
+        #div1 {
+            width: 100px;
+            height: 100px;
+            padding: 200px;
+            position: absolute;
+            top:100px;
+            left:100px;
+            background: url("bowl.png") no-repeat;
+        }
+    </style>
+</head>
+<body>
+<img src="fish.png" style="width:100px;height:60px;" draggable="true" id="img1" ondragstart="drag(event)"/>
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+</div>
+<script>
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+</script>
+</body>
+</html>
