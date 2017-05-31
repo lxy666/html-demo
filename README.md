@@ -18,7 +18,7 @@ ev.dataTransfer.setData("text",ev.target.id);
 ```
 在这个例子中，数据类型是 ``"text"``，值是可拖动元素的 id为`` ("img1")``。
 
-###放到何处 - ondragover
+### 放到何处 - ondragover
 ``ondragover ``事件规定在何处放置被拖动的数据。
 默认地，无法将数据/元素放置到其他元素中。如果需要设置允许放置，我们必须阻止对元素的默认处理方式。
 这要通过调用 ``ondragover`` 事件的 ``event.preventDefault()`` 方法：
@@ -26,7 +26,7 @@ ev.dataTransfer.setData("text",ev.target.id);
 event.preventDefault();
 ```
 
-###进行放置 - ondrop
+### 进行放置 - ondrop
 当放置被拖数据时，会发生 ``drop`` 事件。
 在上面的例子中，``ondrop`` 属性调用了一个函数，``drop(event)：``
 ```javascript
@@ -38,7 +38,7 @@ ev.target.appendChild(document.getElementById(data));
 }
 ```
 
-#####代码解析：
+##### 代码解析：
 * 调用 ``preventDefault() ``来避免浏览器对数据的默认处理（``drop`` 事件的默认行为是以链接形式打开）
 * 通过 ``dataTransfer.getData("text") ``方法获得被拖的数据。该方法将返回在 ``setData()`` 方法中设置为相同类型的任何数据。
 * 被拖数据是被拖元素的`` id ("img1")``
