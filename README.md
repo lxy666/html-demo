@@ -25,6 +25,7 @@ ev.dataTransfer.setData("text",ev.target.id);
 ```
 event.preventDefault();
 ```
+
 ###进行放置 - ondrop
 当放置被拖数据时，会发生 ``drop`` 事件。
 在上面的例子中，``ondrop`` 属性调用了一个函数，``drop(event)：``
@@ -36,6 +37,7 @@ var data=ev.dataTransfer.getData("text");
 ev.target.appendChild(document.getElementById(data));
 }
 ```
+
 #####代码解析：
 * 调用 ``preventDefault() ``来避免浏览器对数据的默认处理（``drop`` 事件的默认行为是以链接形式打开）
 * 通过 ``dataTransfer.getData("text") ``方法获得被拖的数据。该方法将返回在 ``setData()`` 方法中设置为相同类型的任何数据。
