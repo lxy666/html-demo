@@ -1,4 +1,5 @@
-# html5拖放-demo
+# html5-demo
+## 拖放
 >在此之前，实现拖拽操作都是开发人员自定义逻辑实现的，但是HTML5提供了拖拽API ，使得拖拽操作的实现变得简单。
 
 ![fish.gif](http://upload-images.jianshu.io/upload_images/3229842-be565537afb2dae0.gif?imageMogr2/auto-orient/strip)
@@ -43,3 +44,10 @@ ev.target.appendChild(document.getElementById(data));
 * 通过 ``dataTransfer.getData("text") ``方法获得被拖的数据。该方法将返回在 ``setData()`` 方法中设置为相同类型的任何数据。
 * 被拖数据是被拖元素的`` id ("img1")``
 * 把被拖元素追加到目标元素中
+
+## 什么是 Web Worker？
+当在 HTML 页面中执行脚本时，页面的状态是不可响应的，直到脚本已完成。
+web worker 是运行在后台的 JavaScript，独立于其他脚本，不会影响页面的性能。您可以继续做任何愿意做的事情：点击、选取内容等等，而此时 web worker 在后台运行。
+## 浏览器支持
+所有主流浏览器均支持 web worker，除了 Internet Explorer。
+## 在这个实例中，我们创建了计数脚本。该脚本存储于 "demo_workers.js" 文件中：
