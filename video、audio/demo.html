@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .o-video {
+            width: 500px;
+            height: 300px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<p>视频</p>
+<div class="o-video">
+    <video width="500px" id="vid">
+        <source src="vid.mp4"/>
+    </video>
+    <input type="button" name="name" value="Play" id="BtnPlay" onclick="PlayOrPause()"/>
+    <input type="button" name="name" value="End" id="btnEnd" onclick="End()"/>
+</div>
+
+<p>音频</p>
+<audio id="o-audio" controls>
+    <source src="aud.mp3"/>
+</audio>
+<br>
+<script>
+    function PlayOrPause() {
+        var v = document.getElementById('vid');
+        if (v.paused || v.ended) {
+            v.play();
+            document.getElementById('BtnPlay').value = "Pause";
+        }
+        else {
+            v.pause();
+            document.getElementById('BtnPlay').value = "Play";
+        }
+    }
+    function End() {
+        var v = document.getElementById('vid');
+        v.pause();
+        v.currentTime = v.duration;
+        document.getElementById('BtnPlay').value = "Play";
+    }
+</script>
+</body>
+</html>
