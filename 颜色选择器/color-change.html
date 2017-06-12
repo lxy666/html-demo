@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .wrap {
+            width: 220px;
+            height: 200px;
+            position: absolute;
+            top: 300px;
+            left: -172px;
+        }
+        .open-close {
+            height: 45px;
+            width: 48px;
+            background: url("open-close.png") no-repeat;
+            background-size: contain;
+            border: 1px solid grey;
+            border-left: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 2;
+        }
+        .changer {
+            height: 150px;
+            width: 170px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 1px solid grey;
+            text-align: center;
+            padding-top: 8px;
+        }
+        .list > li {
+            display: block;
+            width: 36px;
+            height: 36px;
+            float: left;
+            margin-left: 9%;
+            margin-top: 10%;
+        }
+        .color-orange {
+            background-color: orange;
+        }
+        .color-red {
+            background-color: red;
+        }
+        .color-blue {
+            background-color: blue;
+        }
+        .color-blank {
+            background-color: black;
+        }
+        .color-green {
+            background-color: green;
+        }
+        .color-pink {
+            background-color: pink;
+        }
+        #change {
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap" id="wrap">
+    <!--html-->
+    <div class="open-close" id="open"></div>
+    <div class="changer">
+        <span>颜色的选择</span>
+        <ul class="list">
+            <li class="color-orange"></li>
+            <li class="color-red"></li>
+            <li class="color-blue"></li>
+            <li class="color-blank"></li>
+            <li class="color-green"></li>
+            <li class="color-pink"></li>
+        </ul>
+    </div>
+</div>
+<div id="change">
+change color
+</div>
+<script>
+    HTMLElement.prototype.__defineGetter__("currentStyle", function () {
+        return this.ownerDocument.defaultView.getComputedStyle(this, null);
+    });
+    var open = document.getElementById("open");
+    var wrap = document.getElementById("wrap");
+    var list = document.getElementById("list");
+    var change = document.getElementById("change");
+    var color_change = document.getElementsByTagName("li");
+    change.style.backgroundColor="purple";
+    open.onmouseover = function () {
+        wrap.style.left = 0 + "px";
+
+    };
+    open.onclick = function () {
+        wrap.style.left = -172 + "px";
+    };
+
+    for (var i = 0; i < color_change.length; i++) {
+        color_change[i].id = i;
+        color_change[i].onclick = function () {
+            change.style.backgroundColor = color_change[this.id].currentStyle.backgroundColor;
+        }
+    }
+</script>
+</body>
+</html>
