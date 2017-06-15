@@ -51,9 +51,6 @@ web worker 是运行在后台的 JavaScript，独立于其他脚本，不会影�
 ## 浏览器支持
 所有主流浏览器均支持 web worker，除了 Internet Explorer。 在这个实例中，我们创建了计数脚本。该脚本存储于 "demo_workers.js" 文件中。
 
-## 七巧板
-![image](https://ws2.sinaimg.cn/large/006tKfTcly1fgkny6iwnrj31ae18wac2.jpg)
-
 ## 颜色选择器
 ![image](https://ws1.sinaimg.cn/large/006tKfTcly1fgko0cp8qbj30hu0pst9d.jpg)
 
