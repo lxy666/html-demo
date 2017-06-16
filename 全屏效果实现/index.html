@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML Fullscreen API</title>
+        <link rel="stylesheet" href="css/base.css" type="text/css" media="screen">
+        <base target="content-frame">
+    </head>
+
+    <body>
+
+        <div class="container">
+            <h1>Fullscreen API</h1>
+
+            <section class="main-content">
+                <p>Fullscreen API demo, 当前支持Firefox, Google Chrome, Safari, Opera, 和 IE 11+，点击按钮全屏显示</p>
+
+                <p>
+                    <button id="view-fullscreen">显示全屏</button>
+                    <button id="cancel-fullscreen">取消全屏</button>
+                </p>
+
+                <p>全屏状态: 当前<b id="fullscreen-state">不</b>是全屏</p>
+                <p>背景会在全屏的时候，变成蓝色</p>
+
+
+                <h2>让元素变成全屏</h2>
+                <p>你可以让某些元素变成全屏. 比如, 视频元素:</p>
+
+
+                <video id="mario-video" controls width="320">
+                    <source src="http://www.archive.org/download/Mario1_507/Mario1_507_512kb.mp4">
+                    <source src="http://www.archive.org/download/Mario1_507/Mario1_507.ogv">
+                </video>
+
+                <button id="video-fullscreen">设置视频全屏显示</button>
+
+                <p><i>Video taken from <a href="http://www.archive.org/details/Mario1_507">archive.org</a>.</i></p>
+            </section>
+
+        </div>
+
+
+        <script src="js/base.js"></script>
+
+
+    </body>
+</html>
