@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+    <script src="ajax.js"></script>
+</head>
+<body>
+<label for="user">账号</label>
+<input type="text" id="user">
+<label for="code">密码</label>
+<input type="password" id="code">
+<button id="btn2">login</button>
+<script>
+    var ip1 = document.getElementById("user");
+    var ip2 = document.getElementById("code");
+    var btn = document.getElementById("btn2");
+    var flag = false;
+    ip1.onblur = function () {
+        if (ip1.value.length != 11) {
+            alert("您输入的账号不符合规则");
+            return false;
+        } else {
+            Ajax('GET', 'number.txt', true, judge);
+        }
+    }
+    function judge(data) {
+        data = JSON.parse(data);
+        if (data[ip1.value]) {
+            flag = false;
+            alert("您的账号已被注册");
+        } else {
+            flag = true;
+        }
+    }
+    btn.onclick = function () {
+        if (flag) {
+            flag = false;
+            alert("您的账号是" + ip1.value + "注册成功");
+//        Ajax('POST',url,true,function () {},data);
+        }
+    }
+</script>
+</body>
+</html>
