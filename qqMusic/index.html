@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>QQ前端播放器组件</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <script>
+        var startTime = (new Date()).valueOf(), imgOnloadTime = 0;
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="src/style.css"/>
+    <script>
+        var cssEnd = (new Date()).valueOf();
+    </script>
+</head>
+<body>
+<div class="wrap" id="main_box">
+    <div class="box">
+        <div class="flex_box">
+            <div class="flex_item">
+                <div class="song_info">
+                    <div class="cont">
+                        <h1 class="song" id="song_name"><span>算什么男人</span></h1>
+                        <p class="singer" id="goSinger"><span>周杰伦</span><i class="arrow"></i></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="album_cover">
+                <div class="cover_container">
+                    <img id="album_pic"
+                         onerror="this.src ='http://imgcache.qq.com/music/photo/radio/music_weixin_search.png'; this.onerror=null;"
+                         onload="canShowLrc = true;imgOnloadTime=(+new Date())" src="./src/300_albumpic_852856_0.jpg">
+
+                    <a href="javascript:;" class="btn_play" id="cover"><span></span><i></i></a>
+                </div>
+            </div>
+
+            <div class="flex_item">
+                <div class="lyric" id="lyric">
+                    <div class="cont three_row" id="lyric_txt">
+                        <div class="txt" id="lyricDiv"
+                             style="-webkit-transition: -webkit-transform 0.3s ease-out; transition: -webkit-transform 0.3s ease-out; -webkit-transform: translate3d(0px, 0px, 0px);"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!--播放进度条-->
+    <div class="play_bar">
+        <div class="progress" id="progress">
+            <div class="bar"></div>
+            <div class="has_load" id="play_loading" style="-webkit-transform: translateX(100%);"></div>
+            <div class="has_play" id="play_on" style=""><span id="btn_pro"><i></i></span></div>
+        </div>
+        <p class="play_time">
+            <time id="currentTime">00:00</time>
+            <time id="totalTime">04:49</time>
+        </p>
+    </div>
+
+    <div class="gradient_mask"></div>
+    <div class="bg" id="album_pic2"
+         style="background-image: url(http://imgcache.qq.com/music/photo/album_300/56/300_albumpic_852856_0.jpg?max_age=31536000);"></div>
+    <div class="bg_mask" style="opacity:0.4;"></div>
+
+    <div id="tipsbox" class="tips success"></div>
+</div>
+<audio id="h5audio_media" height="0" width="0"
+       src="http://thirdparty.gtimg.com/C100001Js78a40BZU6.m4a?fromtag=38"></audio>
+
+<script type="text/javascript" src="src/play.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,635 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+}
+
+body {
+    font: 12px/1.5 "hiragino sans gb", arial;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+
+a {
+    text-decoration: none
+}
+
+li {
+    list-style: none
+}
+
+a, img {
+    -webkit-touch-callout: none
+}
+
+.wrap {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden
+}
+
+.box {
+    position: absolute;
+    top: 0;
+    bottom: 80px;
+    z-index: 5;
+    width: 100%
+}
+
+.flex_box {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    display: -ms-flexbox;
+    -ms-flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+}
+
+.flex_item {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    position: relative
+}
+
+.user_info {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    z-index: 6;
+    height: 32px;
+    line-height: 32px;
+    -webkit-border-radius: 0 300px 300px 0;
+    border-radius: 0 300px 300px 0;
+    background: rgba(0, 0, 0, .25)
+}
+
+.user_info .txt {
+    float: left;
+    margin: 0 5px;
+    font-size: 12px;
+    color: #fff
+}
+
+.user_info .avatar {
+    float: left;
+    width: 25px;
+    height: 25px;
+    margin: 4px 4px 0 0;
+    -webkit-border-radius: 300px;
+    border-radius: 300px
+}
+
+.user_info .avatar img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    -webkit-border-radius: 300px;
+    border-radius: 300px
+}
+
+.song_info {
+    display: -webkit-box;
+    -webkit-box-align: center;
+    display: -ms-flexbox;
+    -ms-flex-align: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%
+}
+
+.song_info .cont {
+    width: 100%
+}
+
+.song_info .song, .song_info .singer {
+    width: 60%;
+    margin: 0 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    color: #FFF
+}
+
+.song_info .song {
+    font-size: 18px;
+    font-weight: normal
+}
+
+.song_info .singer {
+    margin-top: 4px;
+    font-size: 15px
+}
+
+.song_info .singer .arrow {
+    display: inline-block;
+    position: relative;
+    top: 1px;
+    width: 8px;
+    height: 13px;
+    margin-left: 5px;
+    background: url(http://imgcache.gtimg.cn/mediastyle/mobile/app/wechat/img/sprite_page_play.png?max_age=2592000&d=20141218124930) no-repeat;
+    background-size: 50px 200px;
+    background-position: 0 -160px
+}
+
+.album_cover .cover_container {
+    position: relative;
+    max-width: 50%;
+    margin: 0 auto;
+    padding-bottom: 23px
+}
+
+.album_cover img {
+    display: block;
+    width: 100%;
+    background: #fff
+}
+
+.album_cover .btn_play, .album_cover .btn_pause {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 10;
+    width: 46px;
+    height: 46px;
+    overflow: hidden;
+    margin-left: -23px
+}
+
+.album_cover .btn_play span, .album_cover .btn_pause span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 46px;
+    height: 46px;
+    line-height: 999em;
+    background: url(http://imgcache.gtimg.cn/mediastyle/mobile/app/wechat/img/sprite_page_play.png?max_age=2592000&d=20141218124930) no-repeat;
+    background-size: 50px 200px
+}
+
+.album_cover .btn_pause span {
+    background-position: 0 -50px
+}
+
+.album_cover .btn_play i, .album_cover .btn_pause i {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    z-index: 1;
+    width: 42px;
+    height: 42px;
+    -webkit-border-radius: 300px;
+    border-radius: 300px;
+    background: rgba(0, 0, 0, .8)
+}
+
+.album_cover .btn_play:active span, .album_cover .btn_pause:active span {
+    opacity: .5
+}
+
+.album_cover .btn_play:active i, .album_cover .btn_pause:active i {
+    background: rgba(0, 0, 0, .9)
+}
+
+.album_cover .playing_time {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 23px;
+    background: rgba(0, 0, 0, .5)
+}
+
+.album_cover .playing_time time {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 60px;
+    margin: -30px 0 0 -50px;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 40px;
+    color: #fff
+}
+
+.lyric {
+    display: -webkit-box;
+    -webkit-box-align: center;
+    display: -ms-flexbox;
+    -ms-flex-align: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%
+}
+
+.lyric .cont {
+    width: 100%;
+    height: 48px;
+    overflow: hidden
+}
+
+.lyric .cont.three_row {
+    height: 72px
+}
+
+.lyric .cont .txt {
+    padding: 0 50px
+}
+
+.lyric .cont p {
+    width: 100%;
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 13px;
+    color: rgba(255, 255, 255, .8);
+    text-align: center
+}
+
+.lyric .cont .current {
+    color: #0dad51
+}
+
+.lyric .cont p.loading {
+    line-height: 100%
+}
+
+.operate_l, .operate_r {
+    position: absolute;
+    bottom: 15px;
+    z-index: 6;
+    overflow: hidden
+}
+
+.operate_l {
+    left: 12px
+}
+
+.operate_r {
+    right: 12px
+}
+
+.icon_bgmusic, .icon_bgmusic_active, .icon_kg, .icon_download, .icon_love, .icon_loved {
+    display: block;
+    width: 33px;
+    height: 33px;
+    overflow: hidden;
+    border: solid 1px rgba(255, 255, 255, .2);
+    border-radius: 9999px
+}
+
+.icon_bgmusic, .icon_bgmusic_active, .icon_kg, .icon_download {
+    float: left;
+    margin-right: 10px
+}
+
+.icon_bgmusic i, .icon_bgmusic_active i, .icon_kg i, .icon_download i, .icon_love i, .icon_loved i {
+    display: block;
+    line-height: 9999px;
+    overflow: hidden;
+    margin: 0 auto;
+    background-repeat: no-repeat
+}
+
+.icon_bgmusic i, .icon_bgmusic_active i, .icon_kg i {
+    background-image: url(http://imgcache.gtimg.cn/mediastyle/mobile/app/wechat/img/sprite_operate_icon.png?max_age=2592000&d=20141218124930);
+    background-size: 30px 60px
+}
+
+.icon_download i, .icon_love i, .icon_loved i {
+    background-image: url(http://imgcache.gtimg.cn/mediastyle/mobile/app/wechat/img/sprite_page_play.png?max_age=2592000&d=20141218124930);
+    background-size: 50px 200px
+}
+
+.icon_bgmusic i, .icon_bgmusic_active i {
+    width: 21px;
+    height: 18px;
+    margin-top: 7px
+}
+
+.icon_bgmusic_active i {
+    background-position: 0 -20px
+}
+
+.icon_download i {
+    width: 17px;
+    height: 18px;
+    margin-top: 6px;
+    background-position: 0 -140px
+}
+
+.icon_kg i {
+    width: 17px;
+    height: 16px;
+    margin-top: 9px;
+    background-position: 0 -40px
+}
+
+.icon_love i, .icon_loved i {
+    width: 17px;
+    height: 14px;
+    margin-top: 10px
+}
+
+.icon_love i {
+    background-position: 0 -100px
+}
+
+.icon_loved i {
+    background-position: 0 -120px
+}
+
+.icon_bgmusic:active i, .icon_bgmusic_:active i, .icon_download:active i, .icon_kg:active i, .icon_love:active i, .icon_loved:active i {
+    opacity: .5
+}
+
+.guide_progress {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    z-index: 10;
+    width: 39px;
+    height: 206px;
+    margin-top: -116px;
+    background-image: url(http://imgcache.gtimg.cn/mediastyle/mobile/app/wechat/img/guide_progress.png?max_age=2592000&d=20141218124930);
+    background-size: cover
+}
+
+.play_bar {
+    position: absolute;
+    bottom: 60px;
+    z-index: 5;
+    width: 100%;
+    height: 40px
+}
+
+.play_bar .progress {
+    position: absolute;
+    left: 50px;
+    right: 50px;
+    z-index: 2;
+    height: 40px;
+    overflow: hidden
+}
+
+.play_bar .bar {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    height: 2px;
+    background-color: #252525
+}
+
+.play_bar .has_load {
+    position: absolute;
+    top: 20px;
+    left: -100%;
+    z-index: 4;
+    width: 100%;
+    height: 2px;
+    background-color: #303B35
+}
+
+.play_bar .has_play {
+    position: absolute;
+    top: 20px;
+    left: -100%;
+    z-index: 5;
+    width: 100%;
+    height: 2px;
+    background-color: #0EAD51
+}
+
+.play_bar .has_play span {
+    position: absolute;
+    top: -20px;
+    right: -21px;
+    width: 40px;
+    height: 40px
+}
+
+.play_bar .has_play span i {
+    display: block;
+    width: 2px;
+    height: 8px;
+    margin: 17px auto 0;
+    background: #0EAD51
+}
+
+.play_bar .play_time {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    right: 5px;
+    z-index: 1
+}
+
+.play_bar .play_time time {
+    position: absolute;
+    top: 3px;
+    font-size: 12px;
+    font-family: arial;
+    color: #878787
+}
+
+.play_bar .play_time time:nth-child(1) {
+    left: 5px
+}
+
+.play_bar .play_time time:nth-child(2) {
+    right: 5px
+}
+
+.btns {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 4;
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+    text-align: center
+}
+
+.btns .btn {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    margin: 20px 5px 0;
+    padding: 0 18px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 19px;
+    color: #fff;
+    -webkit-border-radius: 300px;
+    border-radius: 300px;
+    background-color: #0dad51
+}
+
+.btns .btn:active {
+    background-color: #0a9244
+}
+
+.btns .btn_music {
+    position: relative;
+    padding-left: 40px
+}
+
+.btns .btn_music:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 7px;
+    width: 27px;
+    height: 29px;
+    background-image: url(http://imgcache.gtimg.cn/mediastyle/mobile/app/wechat/img/btn_music_logo.png?max_age=2592000&d=20141218124930);
+    background-size: cover
+}
+
+.btns .btn_music .dot {
+    display: inline-block;
+    width: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: left;
+    vertical-align: middle
+}
+
+.btns.disabled:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%
+}
+
+.gradient_mask {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    height: 250px;
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), #000);
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), #000)
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    -webkit-filter: blur(6px);
+    -webkit-transform: scale(1.05)
+}
+
+.bg_mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    background-color: #000
+}
+
+.bottom_gg {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 4;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 10px;
+    overflow: hidden;
+    color: #c0c0c0;
+    background: rgba(255, 255, 255, .1)
+}
+
+.bottom_gg a {
+    color: #c0c0c0
+}
+
+.bottom_gg:active a {
+    color: #fff
+}
+
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+.has_bottom_gg .box {
+    bottom: 105px
+}
+
+.has_bottom_gg .play_bar {
+    bottom: 85px
+}
+
+.has_bottom_gg .btns {
+    bottom: 25px
+}
+
+.tips {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    width: 100%;
+    -webkit-transform: translateY(-100%);
+    -webkit-transition: all 250ms
+}
+
+.tips.on {
+    -webkit-transform: translateY(0)
+}
+
+.tips p {
+    height: 30px;
+    line-height: 30px;
+    margin: 0 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    -webkit-border-radius: 0 0 3px 3px;
+    background: rgba(0, 0, 0, .7)
+}
+
+.tips.success p:before {
+    content: "";
+    display: inline-block;
+    width: 11px;
+    height: 8.5px;
+    margin-right: 5px;
+    vertical-align: middle;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAARCAYAAADZsVyDAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACzSURBVDhPrdRhDYQwDAVgLGDhLGABC2fhPGEBC1jAAhbOwq6P7JFlWXtd1iVN+PXRvRamlNIUWDOtSHQTFOeSmqNgotlOawRcoyfiGIVb6J3zCKyiI7CJEkbrH6nFuXZ/UcJHHuU3v8CKx4USxhTL81Y6d6OEX/KAbi28Cy2Hh3w1vButt6KFM3/eBrE9/wNr2PWgWng3qu1xC3d3yltoq1XiyN51/TIaa2eB71LYmu5P/wd5jrW2jCv+WwAAAABJRU5ErkJggg==);
+    background-size: cover
+}
