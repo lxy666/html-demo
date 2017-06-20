@@ -45,12 +45,5 @@ ev.target.appendChild(document.getElementById(data));
 * 被拖数据是被拖元素的`` id ("img1")``
 * 把被拖元素追加到目标元素中
 
-## 颜色选择器
-![image](https://ws1.sinaimg.cn/large/006tKfTcly1fgko0cp8qbj30hu0pst9d.jpg)
 
-## 时钟
-![image](https://ws1.sinaimg.cn/large/006tKfTcly1fgko2gxqppj30l60me3zg.jpg)
-
-## 打字机效果
-![image](https://ws4.sinaimg.cn/large/006tKfTcly1fgko6xg3c7g30hs08w775.gif)
 
