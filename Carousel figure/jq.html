@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #igs {
+            margin: 10px auto;
+            width: 940px;
+            height: 320px;
+            position: relative;
+        }
+
+        .ig {
+            position: absolute;
+        }
+
+        #tabs {
+            position: absolute;
+            list-style: none;
+            background-color: rgba(255, 255, 255, .5);
+            left: 400px;
+            bottom: 40px;
+            border-radius: 10px;
+            padding: 5px 0 5px 5px;
+        }
+
+        .tab {
+            float: left;
+            text-align: center;
+            line-height: 20px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            overflow: hidden;
+            margin-right: 4px;
+            border-radius: 100%;
+            background-color: rgb(200, 100, 150);
+        }
+
+        .btn {
+            position: absolute;
+            color: #fff;
+            top: 110px;
+            width: 40px;
+            height: 100px;
+            background-color: rgba(255, 255, 255, .3);
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 100px;
+            border-radius: 5px;
+            margin: 0 5px;
+        }
+
+        .btn2 {
+            position: absolute;
+            right: 0;
+        }
+
+        .btn:hover {
+            background-color: rgba(0, 0, 0, .7);
+        }
+
+        .bg {
+            background-color: #f00;
+        }
+    </style>
+</head>
+<body>
+<div id="igs">
+    <a class="ig" href="#"><img src="image/轮播1.jpg"/></a>
+    <a class="ig" href="#"><img src="image/轮播2.jpg"/></a>
+    <a class="ig" href="#"><img src="image/轮播3.jpg"/></a>
+    <a class="ig" href="#"><img src="image/轮播4.jpg"/></a>
+    <a class="ig" href="#"><img src="image/轮播5.jpg"/></a>
+
+    <div class="btn btn1"><</div>
+    <div class="btn btn2">></div>
+
+    <ul id="tabs">
+        <li class="tab">1</li>
+        <li class="tab">2</li>
+        <li class="tab">3</li>
+        <li class="tab">4</li>
+        <li class="tab">5</li>
+    </ul>
+</div>
+
+<script>
+    var i = 0;
+    var timer;
+    var count;
+    $(document).ready(function () {
+//        $('.ig').eq(0).show().siblings('.ig').hide();
+        $("#igs a:not(:first-child)").hide();
+        count= $("#igs a").length;
+        showTime();
+
+        $('.tab').hover(function () {
+            i = $(this).index();
+            Show();
+            clearInterval(timer);
+        }, function () {
+            showTime();
+        });
+
+        $('.btn1').click(function () {
+            clearInterval(timer);
+            if (i == 0) {
+                i = count;
+            }
+            i--;
+            Show();
+            showTime();
+        });
+
+        $('.btn2').click(function () {
+            clearInterval(timer);
+            if (i == count-1) {
+                i = -1;
+            }
+            i++;
+            Show();
+            showTime();
+        });
+        function showTime() {
+            timer = setInterval(function () {
+                Show();
+                i++;
+                if (i == 5) {
+                    i = 0;
+                }
+            }, 2000);
+        }
+
+        function Show() {
+            $('.ig').eq(i).fadeIn(300).siblings('.ig').fadeOut(300);
+            $('.tab').eq(i).addClass('bg').siblings('.tab').removeClass('bg');
+        }
+    });
+
+
+
+</script>
+</body>
+</html>

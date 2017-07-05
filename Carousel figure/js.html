@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #wrap {
+            width: 945px;
+            height: 288px;
+            padding: 10px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #list {
+            height: 288px;
+            width: 6615px;
+            position: absolute;
+            z-index: 1
+        }
+
+        #list img {
+            float: left;
+        }
+
+        #buttons {
+            width: 200px;
+            height: 20px;
+            position: absolute;
+            bottom: 20px;
+            left: 420px;
+            z-index: 2
+        }
+
+        #buttons span {
+            float: left;
+            height: 15px;
+            width: 15px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        #buttons .on {
+            background-color: orange;
+        }
+
+        .arrow {
+            width: 60px;
+            height: 50px;
+            line-height: 50px;
+            position: absolute;
+            top: 45%;
+            background-color: #000;
+            opacity: 0.25;
+            z-index: 2;
+            text-decoration: none;
+            font-size: 45px;
+            text-align: center;
+            color: #fff;
+            border: 1px solid #000;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .arrow:hover {
+            opacity: 0.6;
+        }
+
+        #wrap:hover .arrow {
+            display: block;
+        }
+
+        #pre {
+            left: 20px;
+        }
+
+        #next {
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="list" style="left: -945px;">
+        <img src="image/轮播5.jpg" alt="">
+        <img src="image/轮播1.jpg" alt="">
+        <img src="image/轮播2.jpg" alt="">
+        <img src="image/轮播3.jpg" alt="">
+        <img src="image/轮播4.jpg" alt="">
+        <img src="image/轮播5.jpg" alt="">
+        <img src="image/轮播1.jpg" alt="">
+    </div>
+    <div id="buttons">
+        <span index="1" class="on"></span>
+        <span index="2"></span>
+        <span index="3"></span>
+        <span index="4"></span>
+        <span index="5"></span>
+    </div>
+    <a href="javascript:;" class="arrow" id="pre">&lt;</a>
+    <a href="javascript:;" class="arrow" id="next">&gt;</a>
+</div>
+<script>
+    picplay();
+    // 轮播图函数
+    function picplay() {
+        var wrap = document.getElementById("wrap"),
+                list = document.getElementById("list"),
+                btns = document.getElementById("buttons").getElementsByTagName("span"),
+                pre = document.getElementById("pre"),
+                next = document.getElementById("next");
+        var index = 1;
+        var timer = null;
+        var animated = false;
+        //小圆点亮起
+        function showBtn() {
+            for (var i = 0; i < btns.length; i++) {
+                if (btns[i].className = "on") {
+                    btns[i].className = ""
+                }
+                btns[index - 1].className = "on"
+            }
+        }
+
+        //图片切换
+        function animate(offset) {
+            animated = true;
+            var newLeft = parseInt(list.style.left) + offset;
+            var time = 1000;//位移总时间
+            var interval = 100;//位移间隔时间
+            var speed = offset / (time / interval);//每次位移量
+            // 自动播放
+            function go() {
+                animated = true;
+                if ((speed < 0 && parseInt(list.style.left) > newLeft) || (speed > 0 && parseInt(list.style.left) < newLeft)) {
+                    list.style.left = parseInt(list.style.left) + speed + 'px';
+                    setTimeout(go, interval);
+                }
+                else {
+                    animated = false;
+                    list.style.left = newLeft + "px";
+                    if (newLeft > -945) {
+                        list.style.left = -4725 + "px";
+                    }
+                    if (newLeft < -4725) {
+                        list.style.left = -945 + "px";
+                    }
+                }
+            }
+
+            go();
+        }
+
+        //右箭头点击
+        next.onclick = function () {
+            if (index == 5) {
+                index = 1
+            } else {
+                index += 1;
+            }
+            showBtn();
+            if (!animated) {
+                animate(-945);
+            }
+        }
+        //左箭头点击
+        pre.onclick = function () {
+            if (index == 1) {
+                index = 5
+            } else {
+                index -= 1;
+            }
+            showBtn();
+            if (!animated) {
+                animate(945);
+            }
+        }
+        // 小圆点点击
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].onclick = function () {
+                var myIndex = parseInt(this.getAttribute("index"));
+                var offset = -945 * (myIndex - index);
+                animate(offset);
+                index = myIndex;
+                showBtn();
+            }
+        }
+        //自动播放
+        function play() {
+            timer = setInterval(function () {
+                next.onclick();
+            }, 3000)
+        }
+
+        // 停止
+        function stop() {
+            clearInterval(timer);
+        }
+
+        wrap.onmouseover = stop;
+        wrap.onmouseout = play;
+        play();
+    }
+</script>
+</body>
+</html>
