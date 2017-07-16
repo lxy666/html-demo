@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c4c7474-78be-4ce7-8e01-2aa68ae5a68c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    <list default="true" id="4c4c7474-78be-4ce7-8e01-2aa68ae5a68c" name="Default" comment="Merge branch 'master' of github.com:lxy666/html5-demo&#10;&#10;# Conflicts:&#10;#&#9;canvas demo 七巧板/index.html&#10;今天我合并了登录逻辑的代码">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/canvas demo 七巧板/index.html" afterPath="$PROJECT_DIR$/canvas demo 七巧板/index.html" />
     </list>
     <ignored path="html5拖拽.iws" />
@@ -46,8 +45,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/canvas demo 七巧板/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="11" lean-forward="false" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+            <state relative-caret-position="157">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -243,7 +242,7 @@
       <updated>1499519836904</updated>
       <workItem from="1499519838394" duration="147000" />
       <workItem from="1499520027470" duration="87000" />
-      <workItem from="1500214325842" duration="828000" />
+      <workItem from="1500214325842" duration="1126000" />
     </task>
     <task id="LOCAL-00001" summary="增加了新的功能&#10;1.aa&#10;2.bb">
       <created>1500214407351</created>
@@ -259,17 +258,25 @@
       <option name="project" value="LOCAL" />
       <updated>1500215097350</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="本地的提交">
+      <created>1500215345996</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1500215345996</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1062000" />
+    <option name="totallyTimeSpent" value="1360000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.136716" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290653" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34955186" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -311,7 +318,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="增加了新的功能&#10;1.aa&#10;2.bb" />
     <MESSAGE value="1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1" />
+    <MESSAGE value="本地的提交" />
+    <MESSAGE value="Merge branch 'master' of github.com:lxy666/html5-demo&#10;&#10;# Conflicts:&#10;#&#9;canvas demo 七巧板/index.html&#10;今天我合并了登录逻辑的代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of github.com:lxy666/html5-demo&#10;&#10;# Conflicts:&#10;#&#9;canvas demo 七巧板/index.html&#10;今天我合并了登录逻辑的代码" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -355,8 +364,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/canvas demo 七巧板/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="11" lean-forward="false" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+        <state relative-caret-position="157">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
