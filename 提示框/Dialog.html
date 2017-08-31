@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/myPlug.css"/>
+		<style type="text/css">
+		    section{
+		    	display: block;
+                margin: auto;
+		    }
+			button{
+				display: block;
+				margin:10px auto;
+				padding: 10px;
+				border: none;
+				outline: none;
+				background-color: #8A6DE9;
+				color: #FFFFFF;
+				border-radius: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<button id="t_btn">警告框</button>
+			<button id="t_btn1">对话框</button>
+			<button id="t_btn2">输入框</button>
+			<button id="t_btn3">消息提示框</button>
+			<button id="t_btn4">等待加载框</button>
+		</section>
+	</body>
+	<script src="js/myPlug.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	    var t_btn = document.querySelector('#t_btn');
+	    var t_btn1 = document.querySelector('#t_btn1');
+	    var t_btn2 = document.querySelector('#t_btn2');
+	    var t_btn3 = document.querySelector('#t_btn3');
+	    var t_btn4 = document.querySelector('#t_btn4');
+		t_btn.addEventListener('click',function () {
+	    	AMI.alert('温馨提示','是否关闭?','确定',function () {
+	    		
+	    	});
+	    });
+	    t_btn1.addEventListener('click',function () {
+	    	AMI.confirm('温馨提示','是否关闭?',['是','否'],function (e) {
+	    		if (e.index==0) {
+	    			alert('0');
+	    		}
+	    		if (e.index==1) {
+	    			alert('1');
+	    		}
+	    	});
+	    });
+	    t_btn2.addEventListener('click',function () {
+	    	AMI.prompt('温馨提示','是否关闭?','确定',function (e) {
+	    		alert(e.value);
+	    	});
+	    });
+	    t_btn3.addEventListener('click',function () {
+	    	AMI.toast('是否成功');
+	    });
+	    t_btn4.addEventListener('click',function () {
+	    	AMI.showloading('玩命加载中...');
+	    	setTimeout(function () {
+      	    	AMI.hiddenloading();
+      	    },2000);
+	    });
+	</script>
+</html>
