@@ -41,10 +41,10 @@ ev.target.appendChild(document.getElementById(data));
 ```
 
 ##### 代码解析：
-* 调用 ``preventDefault() ``来避免浏览器对数据的默认处理（``drop`` 事件的默认行为是以链接形式打开）
+* 调用 ``preventDefault() ``来避免浏览器对数据的默认处理（``drop`` 事件的默认行为是以链接形式打开）。
 * 通过 ``dataTransfer.getData("text") ``方法获得被拖的数据。该方法将返回在 ``setData()`` 方法中设置为相同类型的任何数据。
-* 被拖数据是被拖元素的`` id ("img1")``
-* 把被拖元素追加到目标元素中
+* 被拖数据是被拖元素的`` id ("img1")``。
+* 把被拖元素追加到目标元素中。
 
 
 
