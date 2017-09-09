@@ -3,6 +3,7 @@
 >在此之前，实现拖拽操作都是开发人员自定义逻辑实现的，但是HTML5提供了拖拽API ，使得拖拽操作的实现变得简单。
 
 ![fish.gif](http://upload-images.jianshu.io/upload_images/3229842-be565537afb2dae0.gif?imageMogr2/auto-orient/strip)
+
 ### 设置元素为可拖放模式
 首先，为了使元素可拖动，把`` draggable`` 属性设置为 ``true ``：
 ```html
@@ -40,10 +41,10 @@ ev.target.appendChild(document.getElementById(data));
 ```
 
 ##### 代码解析：
-* 调用 ``preventDefault() ``来避免浏览器对数据的默认处理（``drop`` 事件的默认行为是以链接形式打开）
+* 调用 ``preventDefault() ``来避免浏览器对数据的默认处理（``drop`` 事件的默认行为是以链接形式打开）。
 * 通过 ``dataTransfer.getData("text") ``方法获得被拖的数据。该方法将返回在 ``setData()`` 方法中设置为相同类型的任何数据。
-* 被拖数据是被拖元素的`` id ("img1")``
-* 把被拖元素追加到目标元素中
+* 被拖数据是被拖元素的`` id ("img1")``。
+* 把被拖元素追加到目标元素中。
 
 
 
